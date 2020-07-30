@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "604975413398",
+    "firebase_url": "https://mtandao-1b535.firebaseio.com",
+    "project_id": "mtandao-1b535",
+    "storage_bucket": "mtandao-1b535.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604975413398:android:809cac88e7783df5c32ab7",
+        "android_client_info": {
+          "package_name": "com.example.mtandao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604975413398-s49klc4uag5vtvu4gocim6u99gui0vmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqGFD6bZzds1SmHNW_uwkcYlHeMBATYHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604975413398-s49klc4uag5vtvu4gocim6u99gui0vmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
