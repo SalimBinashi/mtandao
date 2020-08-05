@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".views.RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -22,19 +22,8 @@
             android:src="@drawable/social1" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="22dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="29dp"
-            android:layout_marginEnd="21dp"
-            android:layout_marginRight="21dp"
-            android:background="#77ffffff"
             android:orientation="vertical">
 
             <TextView
@@ -57,15 +46,16 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:focusable="true"
-                android:textColorHint="@color/colorDark">
+                android:textColorHint="@color/colorWhite">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="15"
                     android:hint="@string/enter_email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/colorDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,42 +68,23 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:focusable="true"
-                android:textColorHint="@color/colorDark"
-                app:passwordToggleEnabled="true">
+                android:textColorHint="@color/colorWhite"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorWhite">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="15"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorDark"
-                    android:textSize="18sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:focusable="true"
-                android:textColorHint="@color/colorDark"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="15"
-                    android:hint="@string/confirm_password"
-                    android:inputType="textPassword"
-                    android:textColor="@color/colorDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -132,7 +103,8 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/register_btn_bg"
                 android:padding="15dp"
-                android:text="@string/login_instead"
+                android:text="@string/already_a_member"
+                android:textAllCaps="false"
                 android:textColor="@color/colorBlue"
                 android:textSize="18sp"
                 android:layout_marginBottom="10dp"/>
