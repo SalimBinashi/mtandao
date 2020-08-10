@@ -6,6 +6,12 @@ public interface AccountsListener {
     interface RegistrationListener {
         // create listeners
         void onAccountCreated();
-        void onRegistrationFailure();
+        void onRegistrationFailure(Exception e);
     }
+     interface LoginListener {
+        // listeners
+         void onSuccessLogin();
+         void onLoginFailure();
+         void onFailureResponse(Exception e);
+     }
 }

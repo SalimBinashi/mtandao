@@ -27,6 +27,7 @@ public class AccountsAPI {
     private DatabaseReference databaseReference;
     // call interface
     private AccountsListener.RegistrationListener registrationListener;
+    private AccountsListener.LoginListener loginListener;
 
     // create a constructor
     public  AccountsAPI(Context context) {
@@ -70,8 +71,28 @@ public class AccountsAPI {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        registrationListener.onRegistrationFailure();
+                        registrationListener.onRegistrationFailure(e);
 
+                    }
+                });
+    }
+    public  void loginUser(final String email, final String password) {
+        // call auth
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            loginListener.onSuccessLogin();
+                        } else {
+                            loginListener.onLoginFailure();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        loginListener.onFailureResponse(e);
                     }
                 });
     }
@@ -83,5 +104,13 @@ public class AccountsAPI {
 
     public void setRegistrationListener(AccountsListener.RegistrationListener registrationListener) {
         this.registrationListener = registrationListener;
+    }
+
+    public AccountsListener.LoginListener getLoginListener() {
+        return loginListener;
+    }
+
+    public void setLoginListener(AccountsListener.LoginListener loginListener) {
+        this.loginListener = loginListener;
     }
 }

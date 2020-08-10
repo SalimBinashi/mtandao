@@ -86,6 +86,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
         finish();
     }
+
+    @Override
+    public void onRegistrationFailure(Exception e) {
+        loader.hideDialog();
+        Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+
     public void onRegistrationFailure() {
         loader.hideDialog();
         Toast.makeText(this, "Account creation failure", Toast.LENGTH_SHORT).show();
